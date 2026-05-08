@@ -3,11 +3,11 @@ Vehicle Detection, Tracking, and Trajectory Extraction (Enhanced)
 ===============================================================
 Model      : YOLOv8x (larger, more accurate, pretrained on COCO)
 Tracker    : ByteTrack (Supervision)
-Output     : output2/annotated_video.mp4 + output2/trajectory.csv
+Output     : outputs/annotated_video.mp4 + outputs/trajectory.csv
 Enhancements:
 - More vehicle types (car, motorcycle, bus, truck, bicycle, person, train)
 - Improved tracking with larger YOLOv8x model
-- Output folder: output2
+- Output folder: outputs
 Author     : Enhanced by Copilot
 """
 
@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument("--start_frame", type=int, default=0,    help="Start frame (inclusive)")
     parser.add_argument("--end_frame",   type=int, default=-1,   help="End frame (-1 = till end)")
     parser.add_argument("--conf",        type=float, default=0.3, help="Detection confidence threshold")
-    parser.add_argument("--output_dir",  type=str, default="output2", help="Output directory")
+    parser.add_argument("--output_dir",  type=str, default="outputs", help="Output directory")
     return parser.parse_args()
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
