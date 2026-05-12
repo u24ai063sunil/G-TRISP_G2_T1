@@ -3,8 +3,7 @@
 This project performs vehicle (and related object) detection, tracking, and trajectory extraction from traffic videos using state-of-the-art deep learning models.
 
 ## Model Used
-- **YOLOv8 (You Only Look Once, version 8)**: A real-time object detection model pretrained on the COCO dataset. Two variants are used:
-  - `yolov8n.pt`: Fast, lightweight model (default in `vehicle_tracking.py`).
+- **YOLOv8 (You Only Look Once, version 8)**: A real-time object detection model pretrained on the COCO dataset. 
   - `yolov8x.pt`: Larger, more accurate model (used in `vehicle_tracking.py` for enhanced detection and more classes).
 
 ## Tracking Method
@@ -28,25 +27,23 @@ This project performs vehicle (and related object) detection, tracking, and traj
    ```
 2. **Place your input video** in the project directory (default: `traffic_video.mp4`).
 3. **Run the script**:
-   - Basic tracking (default classes):
+   - Run detection and tracking:
      ```bash
      python vehicle_tracking.py --video traffic_video.mp4 --output_dir outputs
-     ```
-   - Enhanced tracking (more classes, better accuracy):
-     ```bash
-     python vehicle_tracking2.py --video traffic_video.mp4 --output_dir output2
      ```
 4. **Check the outputs** in the specified output directory.
 
 ## Customization
-- You can adjust detection confidence, frame range, and output directory using command-line arguments:
-  ```bash
-  python vehicle_tracking2.py --video your_video.mp4 --conf 0.3 --start_frame 0 --end_frame 500 --output_dir output2
-  ```
+
+You can adjust detection confidence, frame range, and output directory using command-line arguments:
+```bash
+python vehicle_tracking.py --video your_video.mp4 --conf 0.3 --start_frame 0 --end_frame 500 --output_dir outputs
+```
+
 
 ## Notes
-- The first run will automatically download the required YOLOv8 model weights.
-- For best results, use `vehicle_tracking.py` with `yolov8x.pt` for more accurate and diverse object detection.
+- The first run will automatically download the required YOLOv8 model weights if not present.
+- For best results, use `vehicle_tracking.py` with `yolov8x.pt` (already set by default) for accurate and diverse object detection.
 
 ---
-**Author:** SVNIT Internship Project, enhanced by Copilot
+**Author:** SVNIT Internship Project
